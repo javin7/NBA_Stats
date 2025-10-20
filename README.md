@@ -1,11 +1,11 @@
 ```python
 pip install nba_api
-```
 
-```python
+pip install requests
+
+pip install numpy
+
 pip install pandas
-```
 
-```python
 pip install matplotlib
 ```
