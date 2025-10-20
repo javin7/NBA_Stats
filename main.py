@@ -13,16 +13,16 @@ class Player:
         self.player_id = (players.find_players_by_full_name(playerName))[0]['id']
         self.gameLog = PGL.PlayerGameLog(self.player_id, season='2024-25')
 
-
-
     def displayStats(self):
         df = self.gameLog.get_data_frames()[0]
         averages = df[['PTS','REB', 'AST']].mean()
         print(averages)
 
+    # Return Dataframe of the season
     def to_df(self):
         return self.gameLog.get_data_frames()[0]
     
+    # Return Dataframe of the last # of games
     def to_df_int(self, amt):
         return (self.gameLog.get_data_frames()[0]).head(amt).iloc[::-1]
     
