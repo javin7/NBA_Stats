@@ -86,14 +86,14 @@ def plotGraph(Player, amt):
     plt.show()
 
 def main(playerName, amt):
-    lebron = Player(playerName)
+    player = Player(playerName)
     
     # Run the plotGraph function in a separate thread
-    averages_thread = threading.Thread(target=showAverages, args=(lebron, amt))
+    averages_thread = threading.Thread(target=showAverages, args=(player, player.getGamesPlayedThisSeason()))
     averages_thread.start()
 
     # Run the showAverages function in the main thread (since Tkinter requires it)
-    plotGraph(lebron, amt)
+    plotGraph(player, amt)
 
 # Example Usage
 main("Lebron James", 10)
